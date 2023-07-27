@@ -5,3 +5,4 @@ scikit-learn==1.2.2
 matplotlib==3.7.1
 tiktoken==0.3.3
 openai==0.27.8
+seaborn==0.12.2
