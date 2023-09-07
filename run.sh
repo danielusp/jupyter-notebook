@@ -12,11 +12,11 @@ select OPT in "${OP[@]}"
 do
 	case $OPT in
 		"[Build]")
-            docker build -t jupyter:notebook .
+            docker build --network=host -t jupyter:notebook .
 			break
 		    ;;
         "[Run Jupyter]")
-			docker run -it --rm -p 8888:8888 -v "${PWD}/projects":/usr/src/app --name jupyter-notebook jupyter:notebook
+			docker run -it --rm -p 8888:8888 -v "${PWD}/projects":/usr/src/app --network=host --name jupyter-notebook jupyter:notebook
 			break
 		    ;;
 		"Quit")
